@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;900&display=swap");
+
+html {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  background-image: url("https://free4kwallpapers.com/uploads/originals/2020/01/07/animated-colorful-landscape-wallpaper.jpg");
+  background-size: cover;
+  height: 100%;
+  color: #000000;
+}
