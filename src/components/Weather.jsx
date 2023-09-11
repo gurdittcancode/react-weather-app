@@ -76,17 +76,26 @@ function Weather() {
     }
   };
 
+  const handleSubmit = ( e ) => {
+    e.preventDefault();
+    fetchWeatherData();
+  };
+
+
   return (
     <div className="container">
       <div className="search-field">
-        <input
-          type="text"
-          className="input"
-          placeholder="Search..."
-          onChange={handleChange}
-          value={searchTerm}
-          autoFocus
-        />
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            className="input"
+            placeholder="Enter your city name..."
+            onChange={handleChange}
+            value={searchTerm}
+            autoFocus
+          />
+        </form>
+        
         <div className="search-icon">
           <img
             src="https://cdn-icons-png.flaticon.com/512/10905/10905219.png"
