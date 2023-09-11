@@ -68,6 +68,7 @@ function Weather() {
       setSearchTerm("");
     } catch (err) {
       console.log("Location not found");
+      setWeatherData(null);
       setWeatherIcon({
         type: "Not Found",
         img: "https://cdn-icons-png.flaticon.com/512/4275/4275497.png",
