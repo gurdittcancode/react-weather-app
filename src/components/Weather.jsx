@@ -58,9 +58,7 @@ function Weather() {
       const URL = `https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&appid=${API_KEY}&units=metric`;
 
       const response = await axios.get(URL);
-      console.log(response);
       const data = response.data;
-      console.log(data.weather[0].main);
 
       setWeatherIcon(
         weatherImages.find((w) => w.type === data.weather[0].main)
