@@ -116,7 +116,7 @@ function Weather() {
             <div className="weather-image">
               <img src={weatherIcon.img} alt="..." />
             </div>
-            <h3>{weatherIcon.type}</h3>
+            <h3 className="mt-3">{weatherIcon.type}</h3>
           </>
         )}
         {weatherData && (
