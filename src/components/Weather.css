@@ -15,7 +15,7 @@
     transition: all 0.2s ease;
     backdrop-filter: blur(10px) saturate(150%);
     background-color: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     display: flex;
     flex-direction: column;
 }
@@ -71,7 +71,7 @@
 }
 
 .data-container {
-    margin: 40px 0;
+    margin: 20px 0;
 }
 
 .element {
@@ -157,7 +157,7 @@
 @media screen and (min-width: 769px) {
 
     .container {
-        padding: 50px 50px;
+        padding: 20px 50px;
     }
 
     .search-field input {
