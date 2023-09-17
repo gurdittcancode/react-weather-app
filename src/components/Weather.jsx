@@ -119,7 +119,7 @@ function Weather() {
           </>
         )}
         {weatherData && (
-          <div className="weather-temp font-bold text-56">
+          <div className="weather-temp font-bold">
             {weatherData.main.temp} °C
           </div>
         )}
