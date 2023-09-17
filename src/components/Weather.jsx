@@ -76,15 +76,14 @@ function Weather() {
     }
   };
 
-  const handleSubmit = ( e ) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     fetchWeatherData();
   };
 
-
   return (
-    <div className="container">
-      <div className="search-field">
+    <div className="container w-100 flex flex-col">
+      <div className="search-field flex justify-between items-center gap-10">
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -95,7 +94,7 @@ function Weather() {
             autoFocus
           />
         </form>
-        
+
         <div className="search-icon">
           <img
             src="https://cdn-icons-png.flaticon.com/512/10905/10905219.png"
@@ -105,30 +104,32 @@ function Weather() {
         </div>
       </div>
 
-      <div className="weather-container">
+      <div className="weather-container flex justify-center items-center flex-col text-center mt-20">
         {weatherData && (
-          <div className="weather-location">
+          <div className="weather-location font-bold text-24">
             {weatherData.name}, {weatherData.sys.country}
           </div>
         )}
         {weatherIcon && (
           <>
-            <div className="weather-image">
+            <div className="weather-image h-52 w-52 my-3">
               <img src={weatherIcon.img} alt="..." />
             </div>
             <h3 className="mt-3">{weatherIcon.type}</h3>
           </>
         )}
         {weatherData && (
-          <div className="weather-temp">{weatherData.main.temp} °C</div>
+          <div className="weather-temp font-bold text-56">
+            {weatherData.main.temp} °C
+          </div>
         )}
         <div className="data-container">
           {weatherData && (
-            <div className="element">
+            <div className="element flex justify-between items-center gap-10">
               <img
                 src="https://cdn-icons-png.flaticon.com/512/1197/1197102.png"
                 alt=""
-                className="icon"
+                className="icon h-20 w-20"
               />
               <div className="data">
                 <div className="humidity">{weatherData.main.humidity}%</div>
@@ -138,11 +139,11 @@ function Weather() {
           )}
 
           {weatherData && (
-            <div className="element">
+            <div className="element flex justify-between items-center gap-10">
               <img
                 src="https://cdn-icons-png.flaticon.com/512/4150/4150819.png"
                 alt=""
-                className="icon"
+                className="icon h-20 w-20"
               />
               <div className="data">
                 <div className="wind-speed">{weatherData.wind.speed} km/h</div>

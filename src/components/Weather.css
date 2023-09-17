@@ -6,9 +6,7 @@
 }
 
 .container {
-    width: 100%;
     max-width: 500px;
-    margin: auto;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 15px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
@@ -16,15 +14,6 @@
     backdrop-filter: blur(10px) saturate(150%);
     background-color: rgba(255, 255, 255, 0.1);
     padding: 20px 20px 0 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.search-field {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
 }
 
 .search-field input {
@@ -53,51 +42,6 @@
 
 .search-icon img:hover {
     transform: scale(1.2);
-}
-
-.weather-container {
-    margin-top: 30px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.weather-image img {
-    margin-top: 15px;
-    height: 200px;
-    width: 200px;
-}
-
-.data-container {
-    margin: 20px 0;
-}
-
-.element {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.element img {
-    height: 80px;
-    width: 80px;
-}
-
-.weather-temp {
-    font-size: 80px;
-    font-weight: bold;
-}
-
-.data {
-    text-align: center;
-}
-
-.weather-location {
-    font-size: 32px;
-    font-weight: bold;
 }
 
 /* Add this media query for extra small screens (phones) */
