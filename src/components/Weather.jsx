@@ -7,7 +7,7 @@ function Weather() {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [weatherData, setWeatherData] = useState(null);
-  const [weatherIcon, setWeatherIcon] = useState("");
+  const [weatherIcon, setWeatherIcon] = useState(null);
 
   const weatherImages = [
     {
@@ -68,7 +68,7 @@ function Weather() {
       setSearchTerm("");
     } catch (err) {
       console.log("Location not found");
-      setWeatherData(null);
+      setWeatherData("Not found");
       setWeatherIcon({
         type: "Not Found",
         img: "https://cdn-icons-png.flaticon.com/512/4275/4275497.png",
@@ -82,7 +82,7 @@ function Weather() {
   };
 
   return (
-    <div className="container w-100 flex flex-col">
+    <div className="container flex flex-col">
       <div className="search-field flex justify-between items-center gap-10">
         <form onSubmit={handleSubmit}>
           <input
@@ -104,8 +104,14 @@ function Weather() {
         </div>
       </div>
 
-      <div className="weather-container flex justify-center items-center flex-col text-center mt-20">
-        {weatherData && (
+      <div
+        className={`weather-container flex justify-center items-center flex-col text-center ${
+          weatherData ? "mt-20" : "mt-0"
+        }
+          ${weatherData ? "h-30" : "h-2"}
+          `}
+      >
+        {weatherData && weatherData !== "Not found" && (
           <div className="weather-location font-bold text-24">
             {weatherData.name}, {weatherData.sys.country}
           </div>
@@ -118,13 +124,13 @@ function Weather() {
             <h3 className="mt-3">{weatherIcon.type}</h3>
           </>
         )}
-        {weatherData && (
+        {weatherData && weatherData !== "Not found" && (
           <div className="weather-temp font-bold">
             {weatherData.main.temp} °C
           </div>
         )}
         <div className="data-container">
-          {weatherData && (
+          {weatherData && weatherData !== "Not found" && (
             <div className="element flex justify-between items-center gap-10">
               <img
                 src="https://cdn-icons-png.flaticon.com/512/1197/1197102.png"
@@ -138,7 +144,7 @@ function Weather() {
             </div>
           )}
 
-          {weatherData && (
+          {weatherData && weatherData !== "Not found" && (
             <div className="element flex justify-between items-center gap-10">
               <img
                 src="https://cdn-icons-png.flaticon.com/512/4150/4150819.png"

@@ -1,19 +1,15 @@
 * {
-    transition: all 0.5s;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    max-width: 500px;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 15px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
-    transition: all 0.2s ease;
     backdrop-filter: blur(10px) saturate(150%);
     background-color: rgba(255, 255, 255, 0.1);
-    padding: 20px;
 }
 
 .search-field input {
@@ -26,7 +22,6 @@
     font-size: large;
     font-weight: 600;
     text-align: center;
-    margin-right: 15px;
 }
 
 .search-field input::placeholder {
@@ -37,7 +32,6 @@
     height: 28px;
     width: 28px;
     cursor: pointer;
-    transition: all 0.1s ease;
 }
 
 .search-icon img:hover {
@@ -46,6 +40,10 @@
 
 .weather-temp {
     font-size: 52px;
+}
+
+.weather-container {
+    transition: all 0.7s ease;
 }
 
 /* Add this media query for extra small screens (phones) */
@@ -105,7 +103,7 @@
 @media screen and (min-width: 769px) {
 
     .container {
-        padding: 20px 50px;
+        padding: 15px 30px;
     }
 
     .search-field input {
